@@ -15,4 +15,4 @@ use Illuminate\Support\Facades\Route;
 */
 
 Route::get('/characters', [CharacterController::class, 'results'])->name('characters');
-Route::get('/characters/{id}', [CharacterController::class, 'view'])->whereNumber('page');
+Route::get('/characters/{id}', [CharacterController::class, 'view'])->name('character')->whereNumber('page');
