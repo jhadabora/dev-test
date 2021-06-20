@@ -1,6 +1,7 @@
 <?php
 
 use App\Http\Controllers\CharacterController;
+use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Route;
 
 /*
@@ -14,5 +15,6 @@ use Illuminate\Support\Facades\Route;
 |
 */
 
+Route::get('/', fn(Request $request) => view('home'))->name('home');
 Route::get('/characters', [CharacterController::class, 'results'])->name('characters');
 Route::get('/characters/{id}', [CharacterController::class, 'view'])->name('character')->whereNumber('page');

@@ -12,7 +12,7 @@
         <h2>Episode Appearances</h2>
         @if (!is_array($episodes))
             <p>{{ $episodes }}</p>
-        @elseif (count($episodes) > 1)
+        @elseif (count($episodes) >= 1)
             <ul>
                 @foreach($episodes as $episode)
                     <li>{{ $episode->name }}</li>

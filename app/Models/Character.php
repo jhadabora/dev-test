@@ -27,8 +27,12 @@ class Character extends Model {
             return 'Failed to get episode names for episodes ' . implode(', ', $ids);
         }
 
-        //Return an array of the results mapped to Episode objects.
-        return Episode::hydrate($epReponse->collect()->toArray());
+        if (count($ids) == 1) {
+            return [new Episode($epReponse->json())];
+        } else {
+            //Return an array of the results mapped to Episode objects.
+            return Episode::hydrate($epReponse->collect()->toArray());
+        }
     }
 
 }
