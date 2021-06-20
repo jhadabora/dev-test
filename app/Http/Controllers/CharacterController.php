@@ -77,8 +77,11 @@ class CharacterController extends Controller {
         //Create a model based on the array of information passed by the API.
         $character = new Character($charReponse->json());
 
+        //Get the episodes that this character appeared in, or an error message explaining why we couldn't.
+        $episodes = $character->episodeList;
+
         //Render the character data in a blade view.
-        return view('characters.view', compact('character'));
+        return view('characters.view', compact('character', 'episodes'));
     }
 
 }
