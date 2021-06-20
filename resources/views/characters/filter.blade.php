@@ -15,11 +15,11 @@
 </div>
 <div class="mb-3">
     <label for="filter-species" class="form-label">Species</label>
-    <input type="text" class="form-control" id="filter-species" name="species" placeholder="All">
+    <input type="text" class="form-control" id="filter-species" name="species" placeholder="All" value="{{ request('species') }}">
 </div>
 <div class="mb-3">
     <label for="filter-type" class="form-label">Type</label>
-    <input type="text" class="form-control" id="filter-type" name="type" placeholder="All">
+    <input type="text" class="form-control" id="filter-type" name="type" placeholder="All" value="{{ request('type') }}">
 </div>
 <div class="mb-3">
     <label for="filter-gender" class="form-label">Gender</label>
